@@ -100,7 +100,7 @@ if ($mes != '' && $ano != '') {
         echo "<td>✅ No carrinho</td>";
 
         echo "<td>
-            <button onclick=\"window.location.href='retirar_carrinho.php?id={$row['id']}&mes=$mes&ano=$ano'\">
+            <button class=\"button-danger\" onclick=\"window.location.href='retirar_carrinho.php?id={$row['id']}&mes=$mes&ano=$ano'\">
                 🗑️ Retirar do carrinho
             </button>
           </td>";
@@ -110,7 +110,7 @@ if ($mes != '' && $ano != '') {
         echo "<td>⏳ Pendente</td>";
 
         echo "<td>
-            <button onclick=\"window.location.href='adicionar_carrinho.php?id={$row['id']}&mes=$mes&ano=$ano'\">
+            <button class=\"button-success\" onclick=\"window.location.href='adicionar_carrinho.php?id={$row['id']}&mes=$mes&ano=$ano'\">
                 🛒 Adicionar ao carrinho
             </button>
           </td>";

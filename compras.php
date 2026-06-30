@@ -25,7 +25,7 @@ if (isset($_POST['item'])) {
 </head>
 <body>
     <div class="container">
-        <h2>Compras de <?= $mes ?> / <?= $ano ?></h2>
+        <h2>Lista de Compras <?= $mes ?> de <?= $ano ?></h2>
         <form method="POST">
 
             <input type="hidden" name="mes" value="<?= $mes ?>">
@@ -37,9 +37,8 @@ if (isset($_POST['item'])) {
         placeholder="Digite o item"
         required>
 
-    <button>Cadastrar</button>
-    <a class="button-link" href="lista.php">🛒 Ver Lista de Compras</a>
-
+    <button class="button-success">Adicionar item</button>
+    <button type="button" onclick="window.location.href='lista.php'">🛒 Ver Lista de Compras</button>
 </form>
 <table border="1">
 
@@ -59,7 +58,7 @@ if (isset($_POST['item'])) {
         <td>{$row['item']}</td>
 
         <td>
-            <button onclick=\"window.location.href='excluir.php?id={$row['id']}&mes=$mes&ano=$ano'\">🗑️</button>
+            <button class=\"button-danger\" onclick=\"window.location.href='excluir.php?id={$row['id']}&mes=$mes&ano=$ano'\">Remover item🗑️</button>
         </td>
     </tr>";
     }

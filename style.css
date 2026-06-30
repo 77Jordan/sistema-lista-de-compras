@@ -100,6 +100,26 @@ button[type="button"]:hover,
     background: #0c1631;
 }
 
+.button-success {
+    background: #16a34a;
+    box-shadow: 0 12px 24px rgba(22, 163, 74, 0.2);
+}
+
+.button-success:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+.button-danger {
+    background: #dc2626;
+    box-shadow: 0 12px 24px rgba(220, 38, 38, 0.2);
+}
+
+.button-danger:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
 .button-link {
     display: inline-flex;
     align-items: center;

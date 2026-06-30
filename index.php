@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Selecione o mês e o ano para dar inicio ao cadastro de itens</h1>
+        <h1>Selecione um mês e um ano para dar inicio ao cadastro de itens</h1>
         <form action="compras.php" method="GET">
 
             <label>Mês:</label>
@@ -38,14 +38,13 @@
         ?>
     </select>
 
-    <button type="submit">Adicionar itens</button>
+    <button type="submit">Avançar</button>
 
 
 
 </form>
-<button onclick="window.location.href='historico.php'" class="btn-historico">
-    📋 Consultar Histórico
-</button>
+<button onclick="window.location.href='historico.php'" class="btn-historico">📋 Consultar Histórico</button>
+<button type="button" onclick="window.location.href='lista.php'">🛒 Ver Lista de Compras</button>
     </div>
 </body>
 </html>
