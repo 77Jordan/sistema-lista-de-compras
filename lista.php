@@ -1,6 +1,12 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "", "lista_compras");
+// $conn = new mysqli("localhost", "root", "", "lista_compras");  // PARA ACESSAR O SERVIDOR LOCAL
+$conn = new mysqli(    // PARA ACESSAR O SERVIDOR ONLINE
+    "sql308.infinityfree.com",
+    "if0_42307329",
+    "Jordinho159",
+    "if0_42307329_lista_compras"
+);
 
 $mes = $_GET['mes'] ?? '';
 $ano = $_GET['ano'] ?? '';
