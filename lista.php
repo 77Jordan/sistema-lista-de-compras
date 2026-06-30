@@ -79,31 +79,35 @@ if ($mes != '' && $ano != '') {
 
     while ($row = $result->fetch_assoc()) {
 
-        echo "<tr>";
+    echo "<tr>";
 
-        echo "<td>{$row['mes']}</td>";
-        echo "<td>{$row['ano']}</td>";
-        echo "<td>{$row['item']}</td>";
+    echo "<td>{$row['mes']}</td>";
+    echo "<td>{$row['ano']}</td>";
+    echo "<td>{$row['item']}</td>";
 
-        if ($row['status'] == 'carrinho') {
+    if ($row['status'] == 'carrinho') {
 
-            echo "<td>✅ No carrinho</td>";
+        echo "<td>✅ No carrinho</td>";
 
-            echo "<td>
-            
+        echo "<td>
+            <button onclick=\"window.location.href='retirar_carrinho.php?id={$row['id']}&mes=$mes&ano=$ano'\">
+                🗑️ Retirar do carrinho
+            </button>
           </td>";
-        } else {
 
-            echo "<td>⏳ Pendente</td>";
+    } else {
 
-            echo "<td>
-            <button onclick=\"window.location.href='adicionar_carrinho.php?id={$row['id']}'\">Adicionar ao carrinho 🛒</button>
+        echo "<td>⏳ Pendente</td>";
+
+        echo "<td>
+            <button onclick=\"window.location.href='adicionar_carrinho.php?id={$row['id']}&mes=$mes&ano=$ano'\">
+                🛒 Adicionar ao carrinho
+            </button>
           </td>";
-        }
-
-        echo "</tr>";
     }
 
+    echo "</tr>";
+}
     ?>
 </table>
 <button onclick="window.location.href='index.php'">
