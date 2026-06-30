@@ -1,7 +1,17 @@
-<h1>Selecione o Mes e Ano para dar inicio ao cadastro de itens</h1>
-<form action="compras.php" method="GET">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras - Início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Selecione o mês e o ano para dar inicio ao cadastro de itens</h1>
+        <form action="compras.php" method="GET">
 
-    <label>Mês:</label>
+            <label>Mês:</label>
 
     <select name="mes" required>
         <option value="Janeiro">Janeiro</option>
@@ -36,3 +46,6 @@
 <button onclick="window.location.href='historico.php'" class="btn-historico">
     📋 Consultar Histórico
 </button>
+    </div>
+</body>
+</html>

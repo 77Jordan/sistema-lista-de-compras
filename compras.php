@@ -15,11 +15,21 @@ if (isset($_POST['item'])) {
     $conn->query($sql);
 }
 ?>
-<h2>Compras de <?= $mes ?> / <?= $ano ?></h2>
-<form method="POST">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Itens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Compras de <?= $mes ?> / <?= $ano ?></h2>
+        <form method="POST">
 
-    <input type="hidden" name="mes" value="<?= $mes ?>">
-    <input type="hidden" name="ano" value="<?= $ano ?>">
+            <input type="hidden" name="mes" value="<?= $mes ?>">
+            <input type="hidden" name="ano" value="<?= $ano ?>">
 
     <input
         type="text"
@@ -28,9 +38,7 @@ if (isset($_POST['item'])) {
         required>
 
     <button>Cadastrar</button>
-    <a href="lista.php">
-    <button type="button">🛒 Ver Lista de Compras</button>
-</a>
+    <a class="button-link" href="lista.php">🛒 Ver Lista de Compras</a>
 
 </form>
 <table border="1">
@@ -59,3 +67,6 @@ if (isset($_POST['item'])) {
     ?>
 
 </table>
+    </div>
+</body>
+</html>

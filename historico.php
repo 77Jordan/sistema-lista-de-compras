@@ -6,7 +6,18 @@ $filtroMes = $_GET['mes'] ?? '';
 $filtroAno = $_GET['ano'] ?? '';
 
 ?>
-<form method="GET">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Histórico de Compras</h1>
+        <form method="GET">
 
     <select name="mes">
         <option value="">Todos os meses</option>
@@ -50,9 +61,7 @@ $filtroAno = $_GET['ano'] ?? '';
     </select>
     <button type="submit">Pesquisar</button>
 </form>
-<button onclick="window.location.href='index.php'">
-    🔙 Voltar
-</button>
+
 <?php
 $sql = "SELECT DISTINCT mes, ano
         FROM compras
@@ -94,3 +103,9 @@ while ($row = $result->fetch_assoc()) {
     echo "</ul>";
 }
 ?>
+        <button onclick="window.location.href='index.php'">
+            🔙 Voltar
+        </button>
+    </div>
+</body>
+</html>
