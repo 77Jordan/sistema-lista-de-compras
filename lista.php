@@ -1,12 +1,7 @@
 <?php
+require_once __DIR__ . '/config/database.php';
 
-// $conn = new mysqli("localhost", "root", "", "lista_compras");  // PARA ACESSAR O SERVIDOR LOCAL
-$conn = new mysqli(    // PARA ACESSAR O SERVIDOR ONLINE
-    "sql308.infinityfree.com",
-    "if0_42307329",
-    "Jordinho159",
-    "if0_42307329_lista_compras"
-);
+$conn = getDatabaseConnection();
 
 $mes = $_GET['mes'] ?? '';
 $ano = $_GET['ano'] ?? '';
@@ -84,8 +79,8 @@ if ($mes != '' && $ano != '') {
 <table border="1">
 
     <tr>
-        <th>Mês</th>
-        <th>Ano</th>
+        <!-- <th>Mês</th>
+        <th>Ano</th> -->
         <th>Item</th>
         <th>Status</th>
         <th>Ação</th>
@@ -97,8 +92,8 @@ if ($mes != '' && $ano != '') {
 
     echo "<tr>";
 
-    echo "<td>{$row['mes']}</td>";
-    echo "<td>{$row['ano']}</td>";
+    // echo "<td>{$row['mes']}</td>";
+    // echo "<td>{$row['ano']}</td>";
     echo "<td>{$row['item']}</td>";
 
     if ($row['status'] == 'carrinho') {

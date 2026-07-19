@@ -1,13 +1,8 @@
 <?php
+require_once __DIR__ . '/config/database.php';
 
-// $conn = new mysqli("localhost", "root", "", "lista_compras");  // PARA ACESSAR O SERVIDOR LOCAL
-$conn = new mysqli(    // PARA ACESSAR O SERVIDOR ONLINE
-    "sql308.infinityfree.com",
-    "if0_42307329",
-    "Jordinho159",
-    "if0_42307329_lista_compras"
-);
- 
+$conn = getDatabaseConnection();
+
 $mes = $_GET['mes'] ?? $_POST['mes'];
 $ano = $_GET['ano'] ?? $_POST['ano'];
 
