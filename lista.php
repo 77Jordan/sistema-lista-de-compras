@@ -76,7 +76,7 @@ if ($mes != '' && $ano != '') {
     <button type="submit">🔍 Filtrar</button>
 
 </form>
-<table border="1">
+<table border="1" id="lista-table">
 
     <tr>
         <!-- <th>Mês</th>
@@ -125,5 +125,33 @@ if ($mes != '' && $ano != '') {
         🔙 Voltar
     </button>
     </div>
+
+    <script>
+        const mes = new URLSearchParams(window.location.search).get('mes') || '';
+        const ano = new URLSearchParams(window.location.search).get('ano') || '';
+        const table = document.getElementById('lista-table');
+
+        async function refreshLista() {
+            try {
+                const params = new URLSearchParams({ mes, ano });
+                const response = await fetch(`lista_data.php?${params}`);
+                if (!response.ok) throw new Error('Erro ao carregar dados');
+                const data = await response.json();
+                const rows = data.html;
+                table.innerHTML = `
+                    <tr>
+                        <th>Item</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                    ${rows}
+                `;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        setInterval(refreshLista, 3000);
+    </script>
 </body>
 </html>
