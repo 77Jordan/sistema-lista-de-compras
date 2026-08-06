@@ -3,15 +3,13 @@ require_once __DIR__ . '/config/database.php';
 
 $conn = getDatabaseConnection();
 
-$id = $_GET['id'];
+$id = (int)($_GET['id'] ?? 0);
 $mes = $_GET['mes'] ?? '';
 $ano = $_GET['ano'] ?? '';
 
-$conn->query("
-    UPDATE compras
-    SET status='pendente'
-    WHERE id='$id'
-");
+if ($id > 0) {
+    $conn->query("UPDATE compras SET status='pendente' WHERE id=$id");
+}
 
-header("Location: lista.php?mes=$mes&ano=$ano");
+header('Location: index.php?mes=' . urlencode($mes) . '&ano=' . urlencode($ano));
 exit;
